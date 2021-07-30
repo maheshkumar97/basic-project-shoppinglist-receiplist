@@ -19,6 +19,7 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.params.subscribe((param: Params) => {
+      console.log(param['id']);
       this.id = +param['id'];
       this.showableRecipe = this.recipeService.getRecipe(this.id);
     });
@@ -33,5 +34,10 @@ export class RecipeDetailsComponent implements OnInit {
   onEditRecipe() {
     this.router.navigate(['edit'], { relativeTo: this.route });
     //this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
+  }
+
+  onDeleteRecipe() {
+    this.recipeService.deleteRecipe(this.id);
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 }

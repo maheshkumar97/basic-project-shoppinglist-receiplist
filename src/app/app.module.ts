@@ -33,6 +33,6 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     RecipeEditComponent
   ],
   bootstrap: [AppComponent],
-  providers: [ShoppingListService]
+  providers: [ShoppingListService, RecipeService]
 })
 export class AppModule {}
