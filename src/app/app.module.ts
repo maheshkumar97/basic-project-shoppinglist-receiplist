@@ -16,9 +16,19 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-route.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { TestDataService } from './shared/test-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    InMemoryWebApiModule.forRoot(TestDataService)
+  ],
   declarations: [
     AppComponent,
     HeaderComponentComponent,
