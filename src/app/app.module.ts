@@ -19,6 +19,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TestDataService } from './shared/test-data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     ShoppingListComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthenticationComponent
   ],
   bootstrap: [AppComponent],
   providers: [ShoppingListService, RecipeService]
